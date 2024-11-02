@@ -21,7 +21,7 @@ if (import.meta.main) {
     Deno.exit();
   }
 
-  window.recording = {};
+  globalThis.recording = {};
 
   if (user) {
     if (typeof user !== 'string') {
@@ -70,7 +70,7 @@ function validateArgs(
 }
 
 declare global {
-  interface Window {
+  interface globalThis {
     recording: {
       [user: string]: boolean;
     };
